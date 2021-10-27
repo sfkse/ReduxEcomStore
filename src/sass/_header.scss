@@ -1,0 +1,138 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem;
+
+  .navbar__logo {
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.445);
+  }
+
+  .navbar__nav {
+    display: flex;
+
+    .navbar__item {
+      margin: 1rem;
+      font-size: 1.25rem;
+      letter-spacing: 1px;
+
+      .navbar__link {
+        transition: all 0.3s;
+        color: $light-color;
+        font-weight: 600;
+
+        &:hover {
+          color: $dark-color;
+        }
+      }
+    }
+  }
+
+  .navbar__search {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 25rem;
+    width: 300px;
+
+    input {
+      border: none;
+      border-bottom: 1px solid $light-color;
+      padding: 0.3rem 1rem;
+      background: transparent;
+      align-self: center;
+      width: 100%;
+      transition: all 0.3s;
+
+      &:focus {
+        outline: none;
+        border-bottom: 1px solid $dark-color;
+      }
+    }
+  }
+
+  .navbar__account {
+    display: flex;
+    justify-content: space-between;
+    width: 50px;
+
+    .navbar__icon {
+      color: $light-color;
+      transition: all 0.3s;
+
+      &:hover {
+        cursor: pointer;
+        color: $dark-color;
+      }
+    }
+  }
+}
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: url("https://supro.arrowtheme.com/pub/media/wysiwyg/slider/slider-full-3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  overflow: hidden;
+
+  .slider__container {
+    display: flex;
+    position: relative;
+    height: 100%;
+
+    .slider__social {
+      position: absolute;
+      width: 20%;
+      top: 40%;
+      left: 10%;
+      display: flex;
+      flex-direction: column;
+
+      .slider__icon {
+        margin-bottom: 1rem;
+        color: $light-color;
+        cursor: pointer;
+      }
+    }
+    .slider__text {
+      position: absolute;
+      width: 20%;
+      top: 40%;
+      left: 20%;
+      display: flex;
+      flex-direction: column;
+
+      .slider__label {
+        color: $light-color;
+        letter-spacing: 2px;
+        font-weight: 700;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+      }
+
+      .slider__title {
+        font-size: 3rem;
+      }
+
+      .slider__link {
+        margin-top: 2rem;
+        text-transform: uppercase;
+        border-bottom: 2px solid $light-color;
+        color: $light-color;
+        width: fit-content;
+        transition: all 0.3s;
+        letter-spacing: 2px;
+        font-size: 0.8rem;
+
+        &:hover {
+          color: $dark-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+//Fonts
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,300&display=swap");
+
+//Variables
+
+$light-color: rgb(196 152 151);
+$dark-color: rgb(211, 32, 32);
+//Reset
+
+* {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ol,
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  margin: auto;
+}

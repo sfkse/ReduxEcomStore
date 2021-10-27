@@ -1,6 +1,6 @@
 .navbar {
-  position: absolute;
   width: 100%;
+  background-color: transparent;
 
   .navbar__container {
     display: flex;
@@ -95,6 +95,7 @@
   top: 0;
   left: 0;
   z-index: -1;
+  transform: translateY(-130px);
   background-image: url("https://supro.arrowtheme.com/pub/media/wysiwyg/slider/slider-full-3.jpg");
   background-repeat: no-repeat;
   background-size: cover;

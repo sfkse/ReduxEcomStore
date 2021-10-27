@@ -21,8 +21,8 @@ a {
 }
 
 .navbar {
-  position: absolute;
   width: 100%;
+  background-color: transparent;
 }
 
 .navbar .navbar__container {
@@ -148,6 +148,8 @@ a {
   top: 0;
   left: 0;
   z-index: -1;
+  -webkit-transform: translateY(-130px);
+          transform: translateY(-130px);
   background-image: url("https://supro.arrowtheme.com/pub/media/wysiwyg/slider/slider-full-3.jpg");
   background-repeat: no-repeat;
   background-size: cover;

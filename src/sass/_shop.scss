@@ -1,0 +1,38 @@
+.shop {
+  margin-top: 3rem;
+
+  .shop__container {
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    .shop__card {
+      flex: 0 1 calc(100% / 5);
+      max-width: calc(100% / 5);
+      width: 100%;
+      padding: 0.5rem;
+      transition: all $transition;
+
+      .shop__card--image {
+        position: relative;
+        overflow: hidden;
+
+        .shop__card--overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: black;
+          padding: 14px;
+          text-align: center;
+          display: none;
+          transition: all $transition;
+
+          .shop__card--addCart {
+            color: $light-color;
+          }
+        }
+      }
+    }
+  }
+}

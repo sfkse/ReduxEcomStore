@@ -1,10 +1,18 @@
-import React from 'react'
-import { FaFacebookF, FaTwitter, FaGooglePlusG, FaPinterestP } from 'react-icons/fa'
+import React from 'react';
+import { FaFacebookF, FaTwitter, FaGooglePlusG, FaPinterestP } from 'react-icons/fa';
+import { useSpring, animated } from 'react-spring';
 
 const Slider = () => {
+
+    const props = useSpring(
+        {
+            to: { opacity: 1, left: 0 },
+            from: { opacity: 0, left: -1000 },
+            delay: 500
+        })
     return (
         <section className="slider">
-            <div className="slider__container">
+            <animated.div style={props} className="slider__container">
                 <div className="slider__social">
                     <FaFacebookF className="slider__icon" />
                     <FaTwitter className="slider__icon" />
@@ -16,7 +24,7 @@ const Slider = () => {
                     <h1 className="slider__title">Regular Cotton Shirt</h1>
                     <a href="/" className="slider__link">Discover More</a>
                 </div>
-            </div>
+            </animated.div>
         </section>
     )
 }

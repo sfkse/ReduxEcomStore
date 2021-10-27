@@ -18,7 +18,7 @@
       letter-spacing: 1px;
 
       .navbar__link {
-        transition: all 0.3s;
+        transition: all $transition;
         color: $light-color;
         font-weight: 600;
 
@@ -42,7 +42,7 @@
       background: transparent;
       align-self: center;
       width: 100%;
-      transition: all 0.3s;
+      transition: all $transition;
 
       &:focus {
         outline: none;
@@ -58,7 +58,7 @@
 
     .navbar__icon {
       color: $light-color;
-      transition: all 0.3s;
+      transition: all $transition;
 
       &:hover {
         cursor: pointer;
@@ -94,9 +94,14 @@
       flex-direction: column;
 
       .slider__icon {
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         color: $light-color;
         cursor: pointer;
+        transition: all $transition;
+
+        &:hover {
+          color: $dark-color;
+        }
       }
     }
     .slider__text {
@@ -125,7 +130,7 @@
         border-bottom: 2px solid $light-color;
         color: $light-color;
         width: fit-content;
-        transition: all 0.3s;
+        transition: all $transition;
         letter-spacing: 2px;
         font-size: 0.8rem;
 

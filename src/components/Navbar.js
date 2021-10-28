@@ -1,4 +1,5 @@
 import React from 'react';
+import { IconContext } from 'react-icons';
 import { FaUserAlt, FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
@@ -24,15 +25,19 @@ const Navbar = () => {
                     <input type="text" placeholder="Search..." />
                 </div>
                 <div className="navbar__account">
-                    <FaUserAlt className="navbar__icon" />
+                    <IconContext.Provider value={{ className: "navbar__icon" }}>
+                        <FaUserAlt />
+                    </IconContext.Provider>
                     <Link to="/cart" className="navbar__cart">
-                        <FaShoppingCart className="navbar__icon navbar__cart--icon" />
+                        <IconContext.Provider value={{ className: "navbar__icon" }}>
+                            <FaShoppingCart />
+                        </IconContext.Provider>
                         <span className="navbar__icon navbar__cart--qty">0</span>
                     </Link>
 
                 </div>
             </div>
-        </div>
+        </div >
 
     )
 }

@@ -59,12 +59,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 50px;
+      width: 70px;
 
       .navbar__icon {
         color: $light-color;
         transition: all $transition;
-
+        font-size: 1.2rem;
         &:hover {
           cursor: pointer;
           color: $dark-color;

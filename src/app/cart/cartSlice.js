@@ -10,6 +10,8 @@ const initialState = [{
 
 export const cartReducer = (state = initialState, action) => {
     switch (action.type) {
+        case 'cart/':
+            return { ...state }
         default:
             return state
     }

@@ -14,11 +14,12 @@ ReactDOM.render(
     <BrowserRouter>
       <Provider store={store}>
         <App />
+
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/cart" component={Cart} />
+        </Switch>
       </Provider>
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/cart" component={Cart} />
-      </Switch>
     </BrowserRouter>
 
 

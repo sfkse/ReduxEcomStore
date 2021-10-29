@@ -7,22 +7,29 @@
     flex-wrap: wrap;
 
     .shop__card {
-      flex: 0 1 calc(100% / 5);
-      max-width: calc(100% / 5);
+      max-width: calc(100% / 5 - 10px);
       width: 100%;
-      padding: 0.5rem;
+      margin: 1rem auto;
+      padding: 1rem;
       transition: all $transition;
+      border: 0.5px solid $cart-border;
+      box-shadow: 1px 1px 30px $cart-border;
 
       .shop__card--image {
         position: relative;
         overflow: hidden;
+        height: 400px;
+        object-position: top;
 
+        img {
+          width: 100%;
+        }
         .shop__card--overlay {
           position: absolute;
           bottom: 0;
           left: 0;
           right: 0;
-          background-color: black;
+          background-color: rgb(0, 0, 0);
           padding: 14px;
           text-align: center;
           display: none;
@@ -32,6 +39,23 @@
             color: $light-color;
           }
         }
+      }
+      &:hover .shop__card--overlay {
+        display: flex;
+        color: white;
+        font-size: 45px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .shop__card--title {
+        padding-left: 0.5rem;
+        margin-top: 1rem;
+        font-weight: bold;
+      }
+
+      .shop__card--price {
+        padding-left: 0.5rem;
       }
     }
   }

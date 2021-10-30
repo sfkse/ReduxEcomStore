@@ -450,7 +450,9 @@ a {
   border-radius: 5px;
   -webkit-box-shadow: 1px 5px 15px rgba(196, 152, 151, 0.247);
           box-shadow: 1px 5px 15px rgba(196, 152, 151, 0.247);
-  padding: 1rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  height: 50vh;
 }
 
 .cart .cart__payment .cart__payment--wrapper {
@@ -460,12 +462,17 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  text-align: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   margin-top: 2rem;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.cart .cart__payment .cart__payment--wrapper .cart__payment--price {
+  width: 70px;
 }
 
 .cart .cart__payment .cart-total {

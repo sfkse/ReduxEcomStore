@@ -3,8 +3,9 @@ import { IconContext } from 'react-icons'
 import { FaRegWindowClose } from 'react-icons/fa'
 
 const CartItem = ({ item }) => {
+
     return (
-        <div className="cart__item">
+        <div key={item.id} className="cart__item">
             <img className="cart__item--image" src={item.image} alt="Cart Item" />
             <span className="cart__item--name">{item.title}</span>
             <span className="cart__item--qty">

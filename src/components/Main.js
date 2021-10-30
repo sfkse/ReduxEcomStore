@@ -13,7 +13,7 @@ const Main = () => {
 
     useEffect(() => {
         dispatch(fetchProducts())
-    }, [])
+    }, [dispatch])
 
     return (
         <section className="shop">

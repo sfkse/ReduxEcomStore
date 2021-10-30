@@ -93,15 +93,22 @@
     background-color: $cart-border;
     border-radius: 5px;
     box-shadow: 1px 5px 15px $cart-border;
-    padding: 1rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    height: 50vh;
 
     .cart__payment--wrapper {
       display: flex;
       justify-content: space-between;
+      text-align: center;
       align-items: center;
       margin-top: 2rem;
       padding-left: 1rem;
       padding-right: 1rem;
+
+      .cart__payment--price {
+        width: 70px;
+      }
     }
 
     .cart-total {

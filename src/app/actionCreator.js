@@ -30,9 +30,15 @@ export const showLoadingGif = (loading) => {
 }
 
 export const addCart = (cartItem) => {
-    localStorage.setItem('cart', cartItem)
     return {
         type: 'cart/addCart',
         payload: cartItem
+    }
+}
+
+export const addCartPrice = (cartItem) => {
+    return {
+        type: 'cartPrice/addPrice',
+        payload: cartItem.price
     }
 }

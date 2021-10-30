@@ -2,13 +2,14 @@ import React from 'react'
 import { IconContext } from 'react-icons'
 import { FaShoppingCart } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
-import { addCart } from '../app/actionCreator';
+import { addCart, addCartPrice } from '../app/actionCreator';
 
 const Product = (product) => {
     const dispatch = useDispatch()
 
     const handleAddCart = (addProduct) => {
         dispatch(addCart(addProduct))
+        dispatch(addCartPrice(addProduct))
     }
     return (
         <div className="shop__card">

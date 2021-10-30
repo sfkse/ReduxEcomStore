@@ -5,6 +5,8 @@ export const cartPriceReducer = (state = initialValues, action) => {
         case 'cartPrice/addPrice':
             return [...state, action.payload]
 
+        case 'cartPrice/deletePrice':
+            return state
         default:
             return state;
     }

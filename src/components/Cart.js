@@ -4,11 +4,9 @@ import CartItem from './CartItem';
 const Cart = () => {
     const cartItems = useSelector(state => state.cart);
     const cartItemsPrice = useSelector(state => state.cartPrice);
-    const subTotal = cartItemsPrice.reduce(((previousValue, currentValue) => previousValue + currentValue), 0);
-    const vat = parseFloat((parseFloat(subTotal).toFixed(2) * 0.20).toFixed(2));
-    const total = subTotal + vat;
-
-
+    const subTotal = (parseFloat(cartItemsPrice.reduce(((previousValue, currentValue) => previousValue + currentValue), 0))).toFixed(2);
+    const vat = (parseFloat(subTotal).toFixed(2) * 0.20).toFixed(2);
+    const total = (parseFloat(subTotal) + parseFloat(vat)).toFixed(2);
 
     return (
         <div className="cart">
@@ -16,7 +14,7 @@ const Cart = () => {
                 <h2 className="cart__title">Shopping Cart</h2>
                 <div className="cart__items">
                     {
-                        cartItems.map(item => <CartItem item={item} />)
+                        cartItems?.map(item => <CartItem key={item.id} item={item} />)
                     }
                 </div>
                 <div className="cart__subtotal">

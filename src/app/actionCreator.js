@@ -42,3 +42,13 @@ export const addCartPrice = (cartItem) => {
         payload: cartItem.price
     }
 }
+
+export const deleteCartItem = (itemId, cartItems) => {
+    const deletedItem = cartItems.find(item => item.id === itemId);
+    const index = cartItems.findIndex(item => item === deletedItem)
+    return {
+        type: 'cart/deleteCartItem',
+        payload: index
+
+    }
+}

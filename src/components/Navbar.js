@@ -1,11 +1,13 @@
 import React from 'react';
 import { IconContext } from 'react-icons';
 import { FaUserAlt, FaShoppingCart } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-    return (
+    const cartItems = useSelector(state => state.cart)
 
+    return (
         <div className="navbar" >
             <div className="navbar__container">
                 <div className="navbar__logo">
@@ -32,7 +34,7 @@ const Navbar = () => {
                         <IconContext.Provider value={{ className: "navbar__icon" }}>
                             <FaShoppingCart />
                         </IconContext.Provider>
-                        <span className="navbar__icon navbar__cart--qty">0</span>
+                        <span className="navbar__icon navbar__cart--qty">{cartItems.length}</span>
                     </Link>
 
                 </div>

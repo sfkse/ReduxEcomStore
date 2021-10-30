@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../app/actionCreator';
-import Product from './Product'
+import Product from './Product';
 import Loading from './Loading';
 
 
@@ -20,8 +19,6 @@ const Main = () => {
         <section className="shop">
             <div className="shop__container">
                 {loading.loading ? <Loading /> : products[0]?.map(product => <Product key={product.id} product={product} />)}
-
-
             </div>
         </section>
     )

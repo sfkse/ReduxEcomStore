@@ -8,13 +8,12 @@ import store from './app/store'
 import { Provider } from 'react-redux'
 
 
+
 ReactDOM.render(
   <React.StrictMode>
-
     <BrowserRouter>
       <Provider store={store}>
         <App />
-
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/cart" component={Cart} />

@@ -8,7 +8,6 @@ const Product = (product) => {
     const dispatch = useDispatch()
 
     const handleAddCart = (addProduct) => {
-        console.log(addProduct)
         dispatch(addCart(addProduct))
     }
     return (

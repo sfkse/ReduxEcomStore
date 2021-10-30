@@ -1,7 +1,9 @@
 export const fetchProducts = () => async (dispatch) => {
+
     dispatch(showLoadingGif(true))
     return await fetch('https://fakestoreapi.com/products/')
         .then(res => {
+
             if (!res.ok) throw new Error('Error ' + res.status + ': ' + res.statusText)
 
             return res.json()
@@ -28,6 +30,7 @@ export const showLoadingGif = (loading) => {
 }
 
 export const addCart = (cartItem) => {
+    localStorage.setItem('cart', cartItem)
     return {
         type: 'cart/addCart',
         payload: cartItem

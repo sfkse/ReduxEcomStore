@@ -1,75 +1,17 @@
 import React from 'react';
-import Product from '../assets/images/product.jpg';
-import { FaRegWindowClose } from 'react-icons/fa'
-import { IconContext } from 'react-icons/lib';
+import { useSelector } from 'react-redux';
+import CartItem from './CartItem';
 
 const Cart = () => {
+    const cartItems = useSelector(state => state.cart)
     return (
         <div className="cart">
             <div className="cart__list">
                 <h2 className="cart__title">Shopping Cart</h2>
                 <div className="cart__items">
-                    <div className="cart__item">
-                        <img className="cart__item--image" src={Product} alt="Cart Item" />
-                        <span className="cart__item--name">Denim Jacket</span>
-                        <span className="cart__item--qty">
-                            <span className="cart__item--decrease">-</span>
-                            <input min="1" className="cart__item--input" type="number" />
-                            <span className="cart__item--increase">+</span>
-                        </span>
-                        <span className="cart__item--price">$45.00</span>
-                        <span className="cart__item--delete">
-                            <IconContext.Provider value={{ className: "cart__item--icon" }}>
-                                <FaRegWindowClose />
-                            </IconContext.Provider>
-                        </span>
-                    </div>
-                    <div className="cart__item">
-                        <img className="cart__item--image" src={Product} alt="Cart Item" />
-                        <span className="cart__item--name">Denim Jacket</span>
-                        <span className="cart__item--qty">
-                            <span className="cart__item--decrease">-</span>
-                            <input min="1" className="cart__item--input" type="number" />
-                            <span className="cart__item--increase">+</span>
-                        </span>
-                        <span className="cart__item--price">$45.00</span>
-                        <span className="cart__item--delete">
-                            <IconContext.Provider value={{ className: "cart__item--icon" }}>
-                                <FaRegWindowClose />
-                            </IconContext.Provider>
-                        </span>
-                    </div>
-                    <div className="cart__item">
-                        <img className="cart__item--image" src={Product} alt="Cart Item" />
-                        <span className="cart__item--name">Denim Jacket</span>
-                        <span className="cart__item--qty">
-                            <span className="cart__item--decrease">-</span>
-                            <input min="1" className="cart__item--input" type="number" />
-                            <span className="cart__item--increase">+</span>
-                        </span>
-                        <span className="cart__item--price">$45.00</span>
-                        <span className="cart__item--delete">
-                            <IconContext.Provider value={{ className: "cart__item--icon" }}>
-                                <FaRegWindowClose />
-                            </IconContext.Provider>
-                        </span>
-                    </div>
-                    <div className="cart__item">
-                        <img className="cart__item--image" src={Product} alt="Cart Item" />
-                        <span className="cart__item--name">Denim Jacket</span>
-                        <span className="cart__item--qty">
-                            <span className="cart__item--decrease">-</span>
-                            <input min="1" className="cart__item--input" type="number" />
-                            <span className="cart__item--increase">+</span>
-                        </span>
-                        <span className="cart__item--price">$45.00</span>
-                        <span className="cart__item--delete">
-                            <IconContext.Provider value={{ className: "cart__item--icon" }}>
-                                <FaRegWindowClose />
-                            </IconContext.Provider>
-                        </span>
-                    </div>
-
+                    {
+                        cartItems.map(item => <CartItem item={item} />)
+                    }
                 </div>
                 <div className="cart__subtotal">
                     <span className="cart__subtotal--price">Subtotal: $180.00</span>

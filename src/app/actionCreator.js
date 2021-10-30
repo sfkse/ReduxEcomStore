@@ -36,6 +36,21 @@ export const addCart = (cartItem) => {
     }
 }
 
+export const deleteCartItem = (index) => {
+
+    return {
+        type: 'cart/deleteCartItem',
+        payload: index
+    }
+}
+
+export const deleteCartPrice = (price) => {
+    return {
+        type: 'cartPrice/deleteCartPrice',
+        payload: price
+    }
+}
+
 export const addCartPrice = (cartItem) => {
     return {
         type: 'cartPrice/addPrice',
@@ -43,12 +58,12 @@ export const addCartPrice = (cartItem) => {
     }
 }
 
-export const deleteCartItem = (itemId, cartItems) => {
-    const deletedItem = cartItems.find(item => item.id === itemId);
-    const index = cartItems.findIndex(item => item === deletedItem)
+export const updateCartPrice = (price, index) => {
     return {
-        type: 'cart/deleteCartItem',
-        payload: index
-
+        type: 'cartPrice/updateCartPrice',
+        payload: {
+            id: index,
+            price: price
+        }
     }
 }

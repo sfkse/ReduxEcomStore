@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import CartItem from './CartItem';
+import { useHistory } from 'react-router-dom'
 
 const Cart = () => {
     const cartItems = useSelector(state => state.cart);
@@ -7,19 +8,31 @@ const Cart = () => {
     const subTotal = (parseFloat(cartItemsPrice.reduce(((previousValue, currentValue) => previousValue + currentValue), 0))).toFixed(2);
     const vat = (parseFloat(subTotal).toFixed(2) * 0.20).toFixed(2);
     const total = (parseFloat(subTotal) + parseFloat(vat)).toFixed(2);
+    const history = useHistory()
 
+    const handleRedirect = () => {
+        history.push('/')
+    }
     return (
         <div className="cart">
             <div className="cart__list">
                 <h2 className="cart__title">Shopping Cart</h2>
                 <div className="cart__items">
                     {
-                        cartItems?.map(item => <CartItem key={item.id} item={item} />)
+                        cartItems.length === 0 ?
+                            <div className="cart__empty" >
+                                Your cart is empty. Let's shop <span className="cart__redirect" onClick={handleRedirect}>here</span>
+                            </div> :
+                            cartItems?.map(item => <CartItem key={item.id} item={item} />)
                     }
                 </div>
-                <div className="cart__subtotal">
-                    <span className="cart__subtotal--price">Subtotal: ${subTotal}</span>
-                </div>
+                {
+                    cartItems.length === 0 ? '' :
+                        <div className="cart__subtotal">
+                            <span className="cart__subtotal--price">Subtotal: ${subTotal}</span>
+                        </div>
+                }
+
             </div>
             <div className="cart__payment">
                 <h2 className="cart__title">Payment Details</h2>

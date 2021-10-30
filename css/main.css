@@ -236,15 +236,14 @@ a {
   color: #d32020;
 }
 
-.shop {
-  margin-top: 3rem;
-}
-
 .shop .shop__container {
   padding: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -308,6 +307,12 @@ a {
 
 .shop .shop__container .shop__card .shop__card--price {
   padding-left: 0.5rem;
+}
+
+.shop .shop__container .shop__loading {
+  width: 100px;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 .cart {

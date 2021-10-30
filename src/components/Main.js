@@ -1,12 +1,13 @@
+import { useState } from 'react';
 import { useEffect } from 'react';
 import { IconContext } from 'react-icons';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts } from '../app/actionCreator';
+import { fetchProducts, showLoadingGif } from '../app/actionCreator';
+import Loading from './Loading';
 
 
 export const Product = (product) => {
-    console.log(product)
     return (
         <div className="shop__card">
             <div className="shop__card--image">
@@ -24,16 +25,19 @@ export const Product = (product) => {
 
 const Main = () => {
     const products = useSelector(state => state.product)
+    const loading = useSelector(state => state.loading)
     const dispatch = useDispatch();
+    console.log(loading)
     useEffect(() => {
         dispatch(fetchProducts())
+        dispatch(showLoadingGif(true))
+
     }, [])
 
-    console.log(products)
     return (
         <section className="shop">
             <div className="shop__container">
-                {products[0]?.map(product => <Product key={product.id} product={product} />)}
+                {loading.loading ? <Loading /> : products[0]?.map(product => <Product key={product.id} product={product} />)}
 
 
             </div>

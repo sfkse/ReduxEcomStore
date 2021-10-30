@@ -1,9 +1,8 @@
 .shop {
-  margin-top: 3rem;
-
   .shop__container {
     padding: 2rem;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 
     .shop__card {
@@ -57,6 +56,11 @@
       .shop__card--price {
         padding-left: 0.5rem;
       }
+    }
+
+    .shop__loading {
+      width: 100px;
+      justify-self: center;
     }
   }
 }

@@ -11,7 +11,7 @@ const Product = (product) => {
     const handleAddCart = (addProduct) => {
 
         dispatch(addCart(addProduct))
-        dispatch(addCartPrice(addProduct))
+        // dispatch(addCartPrice(addProduct))
     }
     return (
         <div className="shop__card">

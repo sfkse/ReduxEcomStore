@@ -44,10 +44,10 @@ export const deleteCartItem = (index) => {
     }
 }
 
-export const deleteCartPrice = (price) => {
+export const deleteCartPrice = (index) => {
     return {
         type: 'cartPrice/deleteCartPrice',
-        payload: price
+        payload: index
     }
 }
 

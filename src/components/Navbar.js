@@ -34,7 +34,7 @@ const Navbar = () => {
                         <IconContext.Provider value={{ className: "navbar__icon" }}>
                             <FaShoppingCart />
                         </IconContext.Provider>
-                        <span className="navbar__icon navbar__cart--qty">{cartItems.length}</span>
+                        {/* <span className="navbar__icon navbar__cart--qty">{cartItems.cartItems.length}</span> */}
                     </Link>
 
                 </div>

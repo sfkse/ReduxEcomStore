@@ -4,8 +4,8 @@ import { useHistory } from 'react-router-dom'
 
 const Cart = () => {
     const cartItems = useSelector(state => state.cart);
-    const cartItemsPrice = useSelector(state => state.cartPrice);
-    const subTotal = (parseFloat(cartItemsPrice.reduce(((previousValue, currentValue) => previousValue + currentValue), 0))).toFixed(2);
+
+    const subTotal = (parseFloat(cartItems.cartPrices.reduce(((previousValue, currentValue) => previousValue + currentValue), 0))).toFixed(2);
     const vat = (parseFloat(subTotal).toFixed(2) * 0.20).toFixed(2);
     const total = (parseFloat(subTotal) + parseFloat(vat)).toFixed(2);
     const history = useHistory()
@@ -23,7 +23,7 @@ const Cart = () => {
                             <div className="cart__empty" >
                                 Your cart is empty. Let's shop <span className="cart__redirect" onClick={handleRedirect}>here</span>
                             </div> :
-                            cartItems?.map(item => <CartItem key={item.id} item={item} />)
+                            cartItems.cartItems?.map(item => <CartItem key={item.id} item={item} />)
                     }
                 </div>
                 {

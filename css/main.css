@@ -93,6 +93,8 @@ a {
 .navbar .navbar__container .navbar__search input:focus {
   outline: none;
   border-bottom: 1px solid #d32020;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .navbar .navbar__container .navbar__account {
@@ -118,6 +120,8 @@ a {
 .navbar .navbar__container .navbar__account .navbar__icon:hover {
   cursor: pointer;
   color: #d32020;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .navbar .navbar__container .navbar__account .navbar__cart {
@@ -130,6 +134,8 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .navbar .navbar__container .navbar__account .navbar__cart .navbar__cart--qty {
@@ -140,6 +146,11 @@ a {
   color: rgba(255, 255, 255, 0.74);
   -webkit-transform: translate(-10px, -10px);
           transform: translate(-10px, -10px);
+}
+
+.navbar .navbar__container .navbar__account .navbar__cart:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .slider {

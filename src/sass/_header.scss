@@ -51,6 +51,7 @@
         &:focus {
           outline: none;
           border-bottom: 1px solid $dark-color;
+          transform: scale(1.2);
         }
       }
     }
@@ -65,9 +66,11 @@
         color: $light-color;
         transition: all $transition;
         font-size: 1.2rem;
+
         &:hover {
           cursor: pointer;
           color: $dark-color;
+          transform: scale(1.2);
         }
       }
 
@@ -75,6 +78,7 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        transition: all $transition;
 
         .navbar__cart--qty {
           font-size: 0.8rem;
@@ -83,6 +87,10 @@
           border-radius: 50%;
           color: rgba(255, 255, 255, 0.74);
           transform: translate(-10px, -10px);
+        }
+
+        &:hover {
+          transform: scale(1.2);
         }
       }
     }

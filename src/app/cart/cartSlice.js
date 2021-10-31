@@ -1,3 +1,4 @@
+import { showNotification } from "../actionCreator"
 
 const initialState = {
     cartItems: [],
@@ -8,7 +9,13 @@ export const cartReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'cart/addCart':
             const checkIfExist = state.cartItems.findIndex(item => item.id === action.payload.id)
-            if (checkIfExist > -1) return state
+            if (checkIfExist > -1) {
+                showNotification('This product is already in your cart', {
+                    background: "#FFC107",
+                    padding: "2rem"
+                })
+                return state
+            }
             return {
                 ...state,
                 cartItems: state.cartItems.concat(action.payload),

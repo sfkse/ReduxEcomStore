@@ -19,7 +19,7 @@ const Cart = () => {
                 <h2 className="cart__title">Shopping Cart</h2>
                 <div className="cart__items">
                     {
-                        cartItems.length === 0 ?
+                        cartItems.cartItems.length === 0 ?
                             <div className="cart__empty" >
                                 Your cart is empty. Let's shop <span className="cart__redirect" onClick={handleRedirect}>here</span>
                             </div> :

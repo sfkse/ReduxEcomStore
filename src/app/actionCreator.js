@@ -1,3 +1,6 @@
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
+
 export const fetchProducts = () => async (dispatch) => {
 
     dispatch(showLoadingGif(true))
@@ -66,4 +69,17 @@ export const updateCartPrice = (price, index) => {
             price: price
         }
     }
+}
+
+export const showNotification = (message, style) => {
+    Toastify({
+        text: message,
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: style
+    }).showToast();
 }

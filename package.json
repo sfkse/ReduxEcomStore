@@ -17,6 +17,7 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.0",
     "sass": "^1.43.3",
+    "toastify-js": "^1.11.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

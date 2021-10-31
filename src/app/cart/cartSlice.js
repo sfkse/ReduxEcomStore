@@ -7,14 +7,15 @@ const initialState = {
 export const cartReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'cart/addCart':
-
+            const checkIfExist = state.cartItems.findIndex(item => item.id === action.payload.id)
+            if (checkIfExist > -1) return state
             return {
                 ...state,
-                cartItems: state.cartItems.concat(action.payload)
+                cartItems: state.cartItems.concat(action.payload),
+                cartPrices: state.cartPrices.concat(action.payload.price)
             }
 
         case 'cart/deleteCartItem':
-            console.log(action.payload)
             return {
                 ...state,
                 cartItems: [...state.cartItems.slice(0, action.payload), ...state.cartItems.slice(action.payload + 1)]
@@ -23,7 +24,7 @@ export const cartReducer = (state = initialState, action) => {
         case 'cartPrice/addPrice':
             return {
                 ...state,
-                cartPrices: [...state, action.payload]
+                cartPrices: [...state.cartPrices, action.payload]
             }
 
         case 'cartPrice/deleteCartPrice':

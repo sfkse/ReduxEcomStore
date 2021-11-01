@@ -34,7 +34,7 @@ const HamburgerMenu = () => {
         } :
             {
                 to: { opacity: 0, left: 1000 },
-                from: { opacity: 1, left: 0 },
+                // from: { opacity: 1, left: 0 },
                 delay: 300
             })
     return (

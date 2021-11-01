@@ -1,12 +1,13 @@
 .navbar {
   width: 100%;
   background-color: transparent;
+  padding-top: 3rem;
 
   .navbar__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 3rem;
+    padding: 0 3rem;
 
     .navbar__logo {
       font-size: 1.5rem;
@@ -36,23 +37,11 @@
     .navbar__search {
       display: flex;
       justify-content: flex-end;
-      margin-left: 25rem;
+      // margin-left: 25rem;
       width: 300px;
 
       input {
-        border: none;
-        border-bottom: 1px solid $light-color;
-        padding: 0.3rem 1rem;
-        background: transparent;
-        align-self: center;
-        width: 100%;
-        transition: all $transition;
-
-        &:focus {
-          outline: none;
-          border-bottom: 1px solid $dark-color;
-          transform: scale(1.2);
-        }
+        @include search__input;
       }
     }
 
@@ -96,6 +85,8 @@
     }
   }
 }
+
+//Slider
 .slider {
   position: relative;
   width: 100%;
@@ -168,6 +159,94 @@
           color: $dark-color;
         }
       }
+    }
+  }
+}
+
+// Hamburger menu
+.d-flex {
+  display: flex;
+}
+.d-none {
+  display: flex;
+}
+
+.scroll__hidden {
+  overflow: hidden;
+  // transition: all $transition;
+}
+.hamburger__tab {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  cursor: pointer;
+  z-index: 10;
+  display: none;
+
+  .hamburger__tab--line {
+    border: 1px solid $dark-color;
+    width: 25px;
+    margin-bottom: 5px;
+  }
+}
+.hamburger {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(196, 152, 151, 0.9);
+  padding: 2rem;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+
+  .hamburger__logo {
+    font-size: 2.5rem;
+    color: #fff;
+  }
+
+  .hamburger__menu {
+    margin: 3rem 0;
+    .hamburger__item {
+      margin-top: 2rem;
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+
+      .hamburger__link {
+        color: #fff;
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  .hamburger__search {
+    margin-bottom: 3rem;
+    width: 50%;
+
+    input {
+      @include search__input;
+      border-bottom: 1px solid #fff;
+      width: 100%;
+
+      &::placeholder {
+        color: #fff;
+      }
+    }
+  }
+
+  .hamburger__account {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .hamburger__icon {
+      font-size: 2rem;
+      margin: 0.5rem;
+      color: #fff;
     }
   }
 }

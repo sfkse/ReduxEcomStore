@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,300&display=swap");
+body {
+  overflow-x: hidden;
+}
+
 * {
   font-family: "Open Sans", sans-serif;
   margin: 0;
@@ -23,6 +27,7 @@ a {
 .navbar {
   width: 100%;
   background-color: transparent;
+  padding-top: 3rem;
 }
 
 .navbar .navbar__container {
@@ -35,7 +40,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 2rem 3rem;
+  padding: 0 3rem;
 }
 
 .navbar .navbar__container .navbar__logo {
@@ -73,7 +78,6 @@ a {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  margin-left: 25rem;
   width: 300px;
 }
 
@@ -247,11 +251,147 @@ a {
   color: #d32020;
 }
 
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.d-none {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.scroll__hidden {
+  overflow: hidden;
+}
+
+.hamburger__tab {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  cursor: pointer;
+  z-index: 10;
+  display: none;
+}
+
+.hamburger__tab .hamburger__tab--line {
+  border: 1px solid #d32020;
+  width: 25px;
+  margin-bottom: 5px;
+}
+
+.hamburger {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(196, 152, 151, 0.9);
+  padding: 2rem;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.hamburger .hamburger__logo {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.hamburger .hamburger__menu {
+  margin: 3rem 0;
+}
+
+.hamburger .hamburger__menu .hamburger__item {
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.hamburger .hamburger__menu .hamburger__item .hamburger__link {
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.hamburger .hamburger__search {
+  margin-bottom: 3rem;
+  width: 50%;
+}
+
+.hamburger .hamburger__search input {
+  border: none;
+  border-bottom: 1px solid #c49897;
+  padding: 0.3rem 1rem;
+  background: transparent;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-bottom: 1px solid #fff;
+  width: 100%;
+}
+
+.hamburger .hamburger__search input:focus {
+  outline: none;
+  border-bottom: 1px solid #d32020;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.hamburger .hamburger__search input::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.hamburger .hamburger__search input:-ms-input-placeholder {
+  color: #fff;
+}
+
+.hamburger .hamburger__search input::-ms-input-placeholder {
+  color: #fff;
+}
+
+.hamburger .hamburger__search input::placeholder {
+  color: #fff;
+}
+
+.hamburger .hamburger__account {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hamburger .hamburger__account .hamburger__icon {
+  font-size: 2rem;
+  margin: 0.5rem;
+  color: #fff;
+}
+
 .shop .shop__container {
   padding: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -261,7 +401,6 @@ a {
 
 .shop .shop__container .shop__card {
   max-width: calc(100% / 5 - 10px);
-  width: 100%;
   margin: 1rem auto;
   padding: 1rem;
   -webkit-transition: all 0.3s;
@@ -269,18 +408,35 @@ a {
   border: 0.5px solid rgba(196, 152, 151, 0.247);
   -webkit-box-shadow: 1px 1px 30px rgba(196, 152, 151, 0.247);
           box-shadow: 1px 1px 30px rgba(196, 152, 151, 0.247);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .shop .shop__container .shop__card .shop__card--image {
   position: relative;
   overflow: hidden;
-  height: 400px;
-  -o-object-position: top;
-     object-position: top;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .shop .shop__container .shop__card .shop__card--image img {
-  width: 100%;
+  max-width: 80%;
+  margin: auto;
 }
 
 .shop .shop__container .shop__card .shop__card--image .shop__card--overlay {
@@ -515,5 +671,49 @@ a {
   background-color: #d32020;
   color: #fff;
   border-radius: 5px;
+}
+
+.container {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+  .navbar .navbar__logo {
+    font-size: 1rem;
+  }
+  .hamburger__tab {
+    display: block;
+  }
+  .shop__container .shop__card {
+    min-width: calc(100% / 3 - 10px);
+  }
+}
+
+@media (max-width: 600px) {
+  .shop__container .shop__card {
+    min-width: calc(100% / 2 - 10px);
+  }
+  .shop__container .shop__card .shop__card--image {
+    height: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  .shop__container {
+    overflow-x: hidden;
+  }
+  .shop__container .shop__card {
+    min-width: 100%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    margin: auto;
+  }
+  .shop__container .shop__card .shop__card--image {
+    height: 100%;
+  }
 }
 /*# sourceMappingURL=main.css.map */

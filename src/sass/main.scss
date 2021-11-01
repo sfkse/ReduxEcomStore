@@ -2,3 +2,54 @@
 @import "header";
 @import "shop";
 @import "cart";
+
+.container {
+  width: 100%;
+}
+//Media queries
+$small-phones: 375px;
+$large-phones: 600px;
+$breakpoint-tablet: 768px;
+
+@media (max-width: $breakpoint-tablet) {
+  .navbar {
+    display: none;
+
+    .navbar__logo {
+      font-size: 1rem;
+    }
+  }
+  .hamburger__tab {
+    display: block;
+  }
+  .shop__container {
+    .shop__card {
+      min-width: calc(100% / 3 - 10px);
+    }
+  }
+}
+
+@media (max-width: $large-phones) {
+  .shop__container {
+    .shop__card {
+      min-width: calc(100% / 2 - 10px);
+
+      .shop__card--image {
+        height: 100%;
+      }
+    }
+  }
+}
+@media (max-width: $small-phones) {
+  .shop__container {
+    overflow-x: hidden;
+    .shop__card {
+      min-width: 100%;
+      flex: 1;
+      margin: auto;
+      .shop__card--image {
+        height: 100%;
+      }
+    }
+  }
+}

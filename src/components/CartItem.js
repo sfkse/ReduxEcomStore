@@ -59,7 +59,7 @@ const CartItem = ({ item }) => {
                     readOnly />
                 <button className="cart__item--increase" onClick={handleAddQty}>+</button>
             </span>
-            <span className="cart__item--price">${qtyOfItems * item?.price}</span>
+            <span className="cart__item--price">${(qtyOfItems * item?.price).toFixed(2)}</span>
             <span className="cart__item--delete" onClick={() => handleDelete(item?.id)}>
                 <IconContext.Provider value={{ className: "cart__item--icon" }}>
                     <FaRegWindowClose />

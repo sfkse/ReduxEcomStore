@@ -341,6 +341,7 @@ a {
 .hamburger .hamburger__logo {
   font-size: 2.5rem;
   color: #fff;
+  text-align: center;
 }
 
 .hamburger .hamburger__menu {
@@ -360,7 +361,7 @@ a {
 }
 
 .hamburger .hamburger__search {
-  margin-bottom: 3rem;
+  margin: 3rem auto;
   width: 50%;
 }
 
@@ -756,6 +757,10 @@ a {
     font-size: 0.8rem;
     text-align: end;
   }
+  .cart__payment {
+    width: 60%;
+    margin: 5rem auto;
+  }
 }
 
 @media (max-width: 768px) {
@@ -810,9 +815,9 @@ a {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 576px) {
   .shop__container .shop__card {
-    min-width: calc(100% / 2 - 10px);
+    min-width: 100%;
   }
   .shop__container .shop__card .shop__card--image {
     height: 100%;
@@ -861,38 +866,9 @@ a {
   .cart .cart__list .cart__subtotal .cart__subtotal--price {
     font-size: 0.8rem;
   }
-}
-
-@media (max-width: 375px) {
-  .shop__container {
-    overflow-x: hidden;
-  }
-  .shop__container .shop__card {
-    min-width: 100%;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    margin: auto;
-  }
-  .shop__container .shop__card .shop__card--image {
-    height: 100%;
-  }
-  .cart {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 100%;
-    padding: 2rem 1rem;
-  }
-  .cart .cart__item--image {
-    max-width: 50px;
-  }
-  .cart .cart__item--name {
-    font-size: 0.8rem;
-  }
-  .cart .cart__item--price {
-    font-size: 0.8rem;
+  .cart .cart__payment {
+    width: 80%;
+    margin: 5rem auto;
   }
 }
 /*# sourceMappingURL=main.css.map */

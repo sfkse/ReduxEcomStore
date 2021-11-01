@@ -9,7 +9,8 @@ $transition: 0.3s;
 $cart-border: rgba(196, 152, 151, 0.247);
 
 //Reset
-body {
+body,
+html {
   overflow-x: hidden;
 }
 * {

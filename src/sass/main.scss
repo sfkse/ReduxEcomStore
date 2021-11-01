@@ -132,29 +132,41 @@ $large-screen: 1024px;
     .cart__list {
       padding: 0;
 
-      .cart__item {
-        padding: 0;
-        .cart__item--image {
-          max-width: 50px;
+      .cart__items {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        .cart__empty {
+          font-size: 1.2rem;
         }
-        .cart__item--name {
-          font-size: 0.8rem;
-        }
-        .cart__item--qty {
-          button {
-            padding: 0 5px;
+        .cart__item {
+          padding: 0;
+          .cart__item--image {
+            max-width: 50px;
           }
-          .cart__item--input {
-            margin: 0;
+          .cart__item--name {
+            font-size: 0.8rem;
+          }
+          .cart__item--qty {
+            button {
+              padding: 0 5px;
+            }
+            .cart__item--input {
+              margin: 0;
+            }
+          }
+          .cart__item--price {
+            font-size: 0.8rem;
+            text-align: end;
+          }
+          .cart__item--icon {
+            font-size: 0.8rem;
+            text-align: end;
           }
         }
-        .cart__item--price {
+      }
+      .cart__subtotal {
+        .cart__subtotal--price {
           font-size: 0.8rem;
-          text-align: end;
-        }
-        .cart__item--icon {
-          font-size: 0.8rem;
-          text-align: end;
         }
       }
     }

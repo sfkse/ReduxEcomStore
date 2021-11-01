@@ -37,7 +37,7 @@
 
         .cart__item--image {
           flex: 1;
-          max-width: 100px;
+          width: 100px;
         }
 
         .cart__item--name {
@@ -47,8 +47,12 @@
         .cart__item--price,
         .cart__item--delete {
           flex: 1;
+          text-align: center;
         }
         .cart__item--qty {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
           flex: 1;
           margin: 0;
           width: 100px;
@@ -76,7 +80,6 @@
 
           .cart__item--input {
             border: 1px solid rgb(214, 208, 208);
-            margin: 10px;
             padding: 0.4rem 0.9rem;
             width: 60px;
             border-radius: 5px;

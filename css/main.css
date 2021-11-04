@@ -189,11 +189,6 @@ a {
           transform: translate(-10px, -10px);
 }
 
-.navbar .navbar__container .navbar__account .navbar__cart:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
 .slider {
   position: relative;
   width: 100%;

@@ -12,9 +12,14 @@ export const cartReducer = (state = initialState, action) => {
             if (checkIfExist > -1) {
                 showNotification('This product is already in your cart', {
                     background: "#FFC107",
-                    padding: "2rem"
+                    padding: "1rem"
                 })
                 return state
+            } else {
+                showNotification('This product is added your cart', {
+                    background: "#28A745",
+                    padding: "1rem"
+                })
             }
             return {
                 ...state,

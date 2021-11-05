@@ -111,7 +111,7 @@
     box-shadow: 1px 5px 15px $cart-border;
     margin-top: 2rem;
     padding: 2rem;
-    height: 50vh;
+    height: fit-content;
 
     .cart__payment--wrapper {
       display: flex;

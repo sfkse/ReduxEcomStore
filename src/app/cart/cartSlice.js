@@ -8,7 +8,7 @@ const initialState = {
 export const cartReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'cart/addCart':
-            const checkIfExist = state.cartItems.findIndex(item => item.id === action.payload.id)
+            const checkIfExist = state?.cartItems?.findIndex(item => item.id === action.payload.id)
             if (checkIfExist > -1) {
                 showNotification('This product is already in your cart', {
                     background: "#FFC107",
@@ -20,11 +20,18 @@ export const cartReducer = (state = initialState, action) => {
                     background: "#28A745",
                     padding: "1rem"
                 })
-            }
-            return {
-                ...state,
-                cartItems: state.cartItems.concat(action.payload),
-                cartPrices: state.cartPrices.concat(action.payload.price)
+
+                localStorage.setItem('cart', JSON.stringify({
+                    ...state,
+                    cartItems: state?.cartItems?.concat(action.payload),
+                    cartPrices: state?.cartPrices?.concat(action.payload.price)
+                }))
+
+                return {
+                    ...state,
+                    cartItems: state?.cartItems?.concat(action.payload),
+                    cartPrices: state?.cartPrices?.concat(action.payload.price)
+                }
             }
 
         case 'cart/deleteCartItem':

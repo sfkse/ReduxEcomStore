@@ -4,8 +4,8 @@ import { useHistory } from 'react-router-dom'
 
 const Cart = () => {
     const cartItems = useSelector(state => state.cart);
-
-    const subTotal = (parseFloat(cartItems.cartPrices.reduce(((previousValue, currentValue) => previousValue + currentValue), 0))).toFixed(2);
+    console.log(cartItems)
+    const subTotal = (parseFloat(cartItems?.cartPrices?.reduce(((previousValue, currentValue) => previousValue + currentValue), 0))).toFixed(2);
     const vat = (parseFloat(subTotal).toFixed(2) * 0.20).toFixed(2);
     const total = (parseFloat(subTotal) + parseFloat(vat)).toFixed(2);
     const history = useHistory()
@@ -13,21 +13,22 @@ const Cart = () => {
     const handleRedirect = () => {
         history.push('/')
     }
+
     return (
         <div className="cart">
             <div className="cart__list">
                 <h2 className="cart__title">Shopping Cart</h2>
                 <div className="cart__items">
                     {
-                        cartItems.cartItems.length === 0 ?
+                        cartItems?.cartItems?.length === 0 ?
                             <div className="cart__empty" >
                                 Your cart is empty. Let's shop <span className="cart__redirect" onClick={handleRedirect}>here</span>
                             </div> :
-                            cartItems.cartItems?.map(item => <CartItem key={item.id} item={item} />)
+                            cartItems?.cartItems?.map(item => <CartItem key={item.id} item={item} />)
                     }
                 </div>
                 {
-                    cartItems.length === 0 ? '' :
+                    cartItems?.length === 0 ? '' :
                         <div className="cart__subtotal">
                             <span className="cart__subtotal--price">Subtotal: ${subTotal}</span>
                         </div>

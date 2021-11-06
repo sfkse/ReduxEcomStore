@@ -10,8 +10,8 @@ const CartItem = ({ item }) => {
     const cartItems = useSelector(state => state.cart);
     // const cartPrices = useSelector(state => state.cartPrice);
     const dispatch = useDispatch();
-    const index = cartItems.cartItems.findIndex(updated => updated === item);
-    const qtyOfItems = cartItems.cartPrices[index] / item.price;
+    const index = cartItems?.cartItems?.findIndex(updated => updated === item);
+    const qtyOfItems = cartItems?.cartPrices[index] / item.price;
     let finalPrice;
 
     useEffect(() => {
@@ -39,8 +39,8 @@ const CartItem = ({ item }) => {
     }
     const handleDelete = (id) => {
 
-        const deletedItem = cartItems.cartItems.find(item => item.id === id);
-        const index = cartItems.cartItems.findIndex(item => item === deletedItem);
+        const deletedItem = cartItems?.cartItems?.find(item => item.id === id);
+        const index = cartItems?.cartItems?.findIndex(item => item === deletedItem);
 
         dispatch(deleteCartItem(index));
         dispatch(deleteCartPrice(index))

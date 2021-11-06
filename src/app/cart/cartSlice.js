@@ -35,6 +35,12 @@ export const cartReducer = (state = initialState, action) => {
             }
 
         case 'cart/deleteCartItem':
+
+            localStorage.setItem('cart', JSON.stringify({
+                ...state,
+                cartItems: [...state.cartItems.slice(0, action.payload), ...state.cartItems.slice(action.payload + 1)]
+            }))
+
             return {
                 ...state,
                 cartItems: [...state.cartItems.slice(0, action.payload), ...state.cartItems.slice(action.payload + 1)]
@@ -47,12 +53,24 @@ export const cartReducer = (state = initialState, action) => {
             }
 
         case 'cartPrice/deleteCartPrice':
+
+            localStorage.setItem('cart', JSON.stringify({
+                ...state,
+                cartPrices: [...state.cartPrices.slice(0, action.payload), ...state.cartPrices.slice(action.payload + 1)]
+            }))
+
             return {
                 ...state,
                 cartPrices: [...state.cartPrices.slice(0, action.payload), ...state.cartPrices.slice(action.payload + 1)]
             }
 
         case 'cartPrice/updateCartPrice':
+
+            localStorage.setItem('cart', JSON.stringify({
+                ...state,
+                cartPrices: [...state.cartPrices.slice(0, action.payload.id), action.payload.price, ...state.cartPrices.slice(action.payload.id + 1)]
+            }))
+
             return {
                 ...state,
                 cartPrices: [...state.cartPrices.slice(0, action.payload.id), action.payload.price, ...state.cartPrices.slice(action.payload.id + 1)]

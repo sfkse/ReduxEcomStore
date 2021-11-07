@@ -12,51 +12,32 @@
     .navbar__logo {
       font-size: 1.5rem;
       color: rgba(0, 0, 0, 0.445);
-    }
-
-    .navbar__nav {
       display: flex;
+      justify-content: space-between;
 
-      .navbar__item {
-        margin: 1rem;
-        font-size: 1.25rem;
-        letter-spacing: 1px;
+      .navbar__search {
+        display: flex;
+        justify-content: flex-end;
+        margin-left: 5rem;
+        width: 300px;
 
-        .navbar__link {
-          transition: all $transition;
-          color: $light-color;
-          font-weight: 600;
-
-          &:hover {
-            color: $dark-color;
-          }
-        }
-      }
-    }
-
-    .navbar__search {
-      display: flex;
-      justify-content: flex-end;
-      // margin-left: 25rem;
-      width: 300px;
-
-      input {
-        @include search__input;
-
-        &::placeholder {
-          color: #fff;
-        }
-
-        &:focus {
-          background-color: rgba(255, 255, 255, 0.5);
+        input {
+          @include search__input;
 
           &::placeholder {
-            color: $dark-color;
+            color: rgba(0, 0, 0, 0.329);
+          }
+
+          &:focus {
+            background-color: rgba(255, 255, 255, 0.5);
+
+            &::placeholder {
+              color: $dark-color;
+            }
           }
         }
       }
     }
-
     .navbar__account {
       display: flex;
       justify-content: space-between;

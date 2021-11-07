@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom'
 
 const Cart = () => {
     const cartItems = useSelector(state => state.cart);
-    console.log(cartItems)
     const subTotal = (parseFloat(cartItems?.cartPrices?.reduce(((previousValue, currentValue) => previousValue + currentValue), 0))).toFixed(2);
     const vat = (parseFloat(subTotal).toFixed(2) * 0.20).toFixed(2);
     const total = (parseFloat(subTotal) + parseFloat(vat)).toFixed(2);

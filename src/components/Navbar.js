@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { IconContext } from 'react-icons';
 import { FaUserAlt, FaShoppingCart } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
@@ -6,7 +6,12 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const cartItems = useSelector(state => state.cart)
+    const [search, setSearch] = useState()
+    console.log(cartItems.cartItems)
 
+    const handleChange = (e) => {
+        setSearch(e.target.value)
+    }
     return (
         <div className="navbar" >
             <div className="navbar__container">
@@ -24,7 +29,12 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar__search">
-                    <input type="text" placeholder="Search..." />
+                    <input
+                        type="text"
+                        placeholder="Search..."
+                        value={search}
+                        onChange={handleChange}
+                    />
                 </div>
                 <div className="navbar__account">
                     <IconContext.Provider value={{ className: "navbar__icon" }}>
